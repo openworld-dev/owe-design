@@ -1,0 +1,8 @@
+# gstack runtime (daemon state, logs, tokens)
+.gstack/
+
+# gstack skills are symlinked locally via scripts/setup-gstack.sh
+.cursor/skills/
+
+# macOS
+.DS_Store
