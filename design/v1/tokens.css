@@ -1,0 +1,111 @@
+/**
+ * OWE Design System v1 — shadcn/ui compatible tokens
+ * Import before @theme in globals.css
+ * Dark mode: .dark class on html (shadcn convention)
+ */
+
+:root {
+  /* Typography roles */
+  --font-display: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-code: "JetBrains Mono", ui-monospace, monospace;
+
+  /* shadcn base — light mode */
+  --background: #fafafa;
+  --foreground: #18181b;
+
+  --card: #ffffff;
+  --card-foreground: #18181b;
+
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+
+  --primary: #4a7bf7;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #4a7bf7;
+
+  --radius: 0.5rem;
+
+  /* Trading / launch semantics */
+  --success: #16a34a;
+  --success-foreground: #ffffff;
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --info: #4a7bf7;
+
+  /* OWE-specific surfaces (beyond shadcn defaults) */
+  --surface-elevated: #ffffff;
+  --curve-fill: rgb(74 123 247 / 0.08);
+
+  /* Chart / market direction — use only for P&L and price movement */
+  --market-up: #16a34a;
+  --market-down: #dc2626;
+
+  /* Sonner toast accents (border-left) */
+  --toast-success: var(--success);
+  --toast-error: var(--destructive);
+  --toast-warning: var(--warning);
+  --toast-info: var(--primary);
+}
+
+.dark {
+  --background: #0c0d0f;
+  --foreground: #f4f4f5;
+
+  --card: #151619;
+  --card-foreground: #f4f4f5;
+
+  --popover: #151619;
+  --popover-foreground: #f4f4f5;
+
+  --primary: #4a7bf7;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1c1d21;
+  --secondary-foreground: #f4f4f5;
+
+  --muted: #1c1d21;
+  --muted-foreground: #8b8d97;
+
+  --accent: #1c1d21;
+  --accent-foreground: #f4f4f5;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #2a2b30;
+  --input: #2a2b30;
+  --ring: #4a7bf7;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --info: #4a7bf7;
+
+  --surface-elevated: #1c1d21;
+  --curve-fill: rgb(74 123 247 / 0.12);
+
+  --market-up: #22c55e;
+  --market-down: #ef4444;
+
+  /* Sonner toast accents (border-left) */
+  --toast-success: var(--success);
+  --toast-error: var(--destructive);
+  --toast-warning: var(--warning);
+  --toast-info: var(--primary);
+}
