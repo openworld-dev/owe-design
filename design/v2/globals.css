@@ -56,10 +56,10 @@
   --font-mono: var(--font-mono);
   --font-code: var(--font-code);
 
-  /* Radius scale — tighter than v1 */
-  --radius-sm: 2px;
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
+  /* Radius scale — same as v1 */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
   /* Spacing (4px base) */
@@ -88,15 +88,5 @@
   [data-financial] {
     font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
-  }
-}
-
-@layer utilities {
-  .brand-rail {
-    border-left: var(--brand-rail) solid var(--brand);
-  }
-
-  .brand-rail-top {
-    border-top: var(--brand-rail) solid var(--brand);
   }
 }

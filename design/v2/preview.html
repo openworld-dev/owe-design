@@ -13,10 +13,9 @@
       --font-body: 'Outfit', system-ui, sans-serif;
       --font-mono: 'IBM Plex Mono', monospace;
       --font-code: 'JetBrains Mono', monospace;
-      --brand-rail: 3px;
-      --radius-sm: 2px;
-      --radius-md: 4px;
-      --radius-lg: 6px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
       --space-1: 4px;
       --space-2: 8px;
       --space-3: 12px;
@@ -45,7 +44,7 @@
       --warning: #EAB308;
       --info: var(--brand);
       --curve-fill: var(--brand-subtle);
-      --shadow: none;
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
     }
 
     [data-theme="light"] {
@@ -85,7 +84,6 @@
       z-index: 100;
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      border-top: var(--brand-rail) solid var(--brand);
       padding: var(--space-4) var(--space-5);
       display: flex;
       align-items: center;
@@ -98,17 +96,6 @@
       font-size: 1.25rem;
       font-weight: 600;
       letter-spacing: -0.015em;
-    }
-
-    .preview-header h1::after {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: var(--brand);
-      border-radius: 50%;
-      margin-left: 6px;
-      vertical-align: super;
     }
 
     .preview-header p {
@@ -204,8 +191,7 @@
     .type-specimen {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-left: var(--brand-rail) solid var(--brand);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       padding: var(--space-5);
       margin-bottom: var(--space-4);
     }
@@ -246,10 +232,9 @@
       transition: background 0.15s ease, border-color 0.15s ease;
     }
 
-    .btn-primary { background: var(--brand); color: #fff; }
-    .btn-primary:hover { background: var(--brand-light); }
-    .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
-    .btn-secondary:hover { border-color: var(--brand); color: var(--brand); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-secondary { background: var(--surface-elevated); color: var(--text); border: 1px solid var(--border); }
     .btn-ghost { background: transparent; color: var(--text-muted); border: 1px solid transparent; }
     .btn-success { background: var(--success); color: #fff; }
     .btn-error { background: var(--error); color: #fff; }
@@ -258,29 +243,26 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 3px 8px;
-      border-radius: var(--radius-sm);
+      padding: 4px 10px;
+      border-radius: 999px;
       font-family: var(--font-mono);
-      font-size: 0.625rem;
+      font-size: 0.6875rem;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      border: 1px solid var(--border);
-      background: transparent;
+      letter-spacing: 0.04em;
     }
 
-    .badge-live { border-color: var(--success); color: var(--success); }
-    .badge-upcoming { border-color: var(--brand); color: var(--brand); }
-    .badge-trading { border-color: var(--border); color: var(--text-muted); }
+    .badge-live { background: rgba(34, 197, 94, 0.15); color: var(--success); }
+    .badge-upcoming { background: var(--brand-muted); color: var(--brand); }
+    .badge-trading { background: rgba(139, 141, 151, 0.15); color: var(--text-muted); }
 
-    .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
     /* Mockup frames */
     .mockup-frame {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-left: var(--brand-rail) solid var(--brand);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow);
     }
@@ -308,15 +290,10 @@
       color: var(--text-muted);
     }
 
-    .mockup-nav span.active {
-      color: var(--text);
-      font-weight: 500;
-      box-shadow: inset 0 -2px 0 var(--brand);
-      padding-bottom: 2px;
-    }
+    .mockup-nav span.active { color: var(--text); font-weight: 500; }
 
     .mockup-connect {
-      background: var(--brand);
+      background: var(--accent);
       color: #fff;
       border: none;
       border-radius: var(--radius-md);
@@ -325,6 +302,80 @@
       font-weight: 500;
       cursor: pointer;
       min-height: 36px;
+    }
+
+    .mockup-account {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 6px 12px 6px 6px;
+      font-size: 0.8125rem;
+      color: var(--text);
+      cursor: pointer;
+      min-height: 36px;
+    }
+
+    .mockup-account-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-sm);
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6875rem;
+      font-weight: 600;
+    }
+
+    .catalog-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .catalog-toolbar h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      min-height: 36px;
+    }
+
+    .filter-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .launch-card-action {
+      margin-top: var(--space-3);
+    }
+
+    .launch-card-action .btn {
+      width: 100%;
+      min-height: 40px;
     }
 
     .mockup-body { padding: var(--space-4); }
@@ -393,7 +444,6 @@
     .curve-chart {
       background: var(--surface-elevated);
       border: 1px solid var(--border);
-      border-top: var(--brand-rail) solid var(--brand);
       border-radius: var(--radius-md);
       padding: var(--space-4);
       min-height: 280px;
@@ -432,7 +482,6 @@
     .bid-panel {
       background: var(--surface-elevated);
       border: 1px solid var(--border);
-      border-left: var(--brand-rail) solid var(--brand);
       border-radius: var(--radius-md);
       padding: var(--space-4);
     }
@@ -550,7 +599,7 @@
       cursor: pointer;
     }
 
-    .market-row.active { background: var(--brand-muted); border-left: var(--brand-rail) solid var(--brand); }
+    .market-row.active { background: var(--brand-muted); }
     .market-row:last-child { border-bottom: none; }
     .market-pair { font-weight: 500; }
     .market-price { font-family: var(--font-mono); font-size: 0.75rem; }
@@ -696,102 +745,205 @@
       .bottom-nav { display: none; }
     }
 
-    /* Launch catalog — ledger list (not card grid) */
-    .launch-ledger {
+    /* Launch cards catalog */
+    .launch-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+
+    @media (min-width: 600px) {
+      .launch-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 900px) {
+      .launch-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .launch-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* §06 Home launch spotlight */
+    .spotlight-frame {
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      background: var(--surface);
+      box-shadow: var(--shadow);
+      max-width: 420px;
+      margin: 0 auto;
     }
 
-    .launch-ledger-header {
-      display: grid;
-      grid-template-columns: 1fr auto auto auto;
-      gap: var(--space-4);
-      padding: var(--space-3) var(--space-4);
-      border-bottom: 1px solid var(--border);
-      font-family: var(--font-mono);
-      font-size: 0.625rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      background: var(--surface-elevated);
-    }
+    .spotlight-frame.wide { max-width: 900px; }
 
-    @media (max-width: 599px) {
-      .launch-ledger-header { display: none; }
-    }
-
-    .launch-row {
-      display: grid;
-      grid-template-columns: 1fr auto auto auto;
-      gap: var(--space-4);
-      align-items: center;
-      padding: var(--space-4);
-      border-bottom: 1px solid var(--border);
-      cursor: pointer;
-      transition: background 0.12s ease;
-    }
-
-    .launch-row:last-child { border-bottom: none; }
-
-    .launch-row:hover { background: var(--brand-subtle); }
-
-    .launch-row:focus-visible {
-      outline: 2px solid var(--brand);
-      outline-offset: -2px;
-    }
-
-    @media (max-width: 599px) {
-      .launch-row {
-        grid-template-columns: 1fr;
-        gap: var(--space-2);
-      }
-    }
-
-    .launch-row-main {
+    .spotlight-topbar {
       display: flex;
       align-items: center;
-      gap: var(--space-3);
-      min-width: 0;
+      justify-content: space-between;
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 11, 13, 0.85);
+      position: relative;
+      z-index: 3;
     }
 
-    .launch-row-main h4 {
+    .spotlight-topbar .mockup-nav span.active { color: var(--accent); }
+
+    .spotlight-slide {
+      position: relative;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .spotlight-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(10, 11, 13, 0.96) 0%, rgba(10, 11, 13, 0.55) 45%, rgba(10, 11, 13, 0.25) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%2312141A"/><stop offset="100%" stop-color="%231A1C22"/></linearGradient></defs><rect fill="url(%23g)" width="400" height="640"/><rect fill="%2327272A" x="40" y="120" width="320" height="2" opacity="0.4"/><rect fill="%2327272A" x="80" y="180" width="240" height="2" opacity="0.3"/><rect fill="%2327272A" x="60" y="240" width="280" height="2" opacity="0.25"/><circle fill="%2338BDF8" cx="200" cy="320" r="80" opacity="0.06"/></svg>') center/cover;
+    }
+
+    .spotlight-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.015) 2px,
+        rgba(255, 255, 255, 0.015) 4px
+      );
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .spotlight-content {
+      position: relative;
+      z-index: 2;
+      padding: var(--space-5) var(--space-4) var(--space-3);
+    }
+
+    .spotlight-content h3 {
       font-family: var(--font-display);
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: var(--space-2) 0 var(--space-1);
     }
 
-    .launch-row-main p {
-      font-size: 0.75rem;
+    .spotlight-subtitle {
+      font-size: 0.8125rem;
       color: var(--text-muted);
+      margin-bottom: var(--space-3);
     }
 
-    .launch-row-stat {
-      text-align: right;
-      min-width: 72px;
+    .spotlight-desc {
+      font-size: 0.9375rem;
+      color: var(--text);
+      line-height: 1.45;
+      margin-bottom: var(--space-4);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    .launch-row-stat .stat-label {
-      font-size: 0.625rem;
-      margin-bottom: 2px;
+    .spotlight-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-4);
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-muted);
+      margin-bottom: var(--space-4);
     }
 
-    .launch-row-stat .stat-value {
-      font-size: 0.875rem;
+    .spotlight-metrics strong { color: var(--text); font-weight: 500; }
+
+    .spotlight-metrics .countdown { color: var(--accent); }
+
+    .spotlight-cta { margin-bottom: var(--space-4); }
+
+    .spotlight-cta .btn { width: 100%; min-height: 48px; font-size: 0.9375rem; }
+
+    .spotlight-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding: 0 var(--space-4) var(--space-4);
+      position: relative;
+      z-index: 2;
     }
 
-    @media (max-width: 599px) {
-      .launch-row-stat {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-        min-width: 0;
-      }
+    .spotlight-arrows {
+      display: flex;
+      gap: var(--space-2);
     }
 
-    /* Legacy card styles kept for reference section only */
-    .launch-cards { display: none; }
+    .spotlight-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: rgba(18, 20, 26, 0.8);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.125rem;
+    }
+
+    .spotlight-dots {
+      display: flex;
+      gap: var(--space-2);
+      align-items: center;
+    }
+
+    .spotlight-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    .spotlight-dot.active { background: var(--accent); width: 20px; border-radius: 4px; }
+
+    .spotlight-link {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .spotlight-link:hover { color: var(--accent); }
+
+    .spotlight-bottom-nav {
+      border-top: 1px solid var(--border);
+      background: rgba(10, 11, 13, 0.95);
+    }
+
+    .spotlight-compare {
+      display: grid;
+      gap: var(--space-5);
+      margin-top: var(--space-5);
+    }
+
+    @media (min-width: 768px) {
+      .spotlight-compare { grid-template-columns: 1fr 1fr; }
+      .spotlight-frame { max-width: none; }
+    }
+
+    .spotlight-frame.ended .spotlight-bg {
+      filter: saturate(0.45);
+    }
+
+    .badge-ended { background: rgba(139, 141, 151, 0.2); color: var(--text-muted); }
 
     .launch-card {
       background: var(--surface-elevated);
@@ -838,21 +990,20 @@
 
     .progress-fill {
       height: 100%;
-      background: var(--brand);
+      background: var(--accent);
       border-radius: 2px;
     }
 
     .alert {
       padding: var(--space-3) var(--space-4);
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
       font-size: 0.8125rem;
       margin-bottom: var(--space-3);
-      border-left: var(--brand-rail) solid transparent;
     }
 
-    .alert-success { background: transparent; color: var(--success); border: 1px solid rgba(34, 197, 94, 0.35); border-left-color: var(--success); }
-    .alert-error { background: transparent; color: var(--error); border: 1px solid rgba(239, 68, 68, 0.35); border-left-color: var(--error); }
-    .alert-info { background: transparent; color: var(--brand); border: 1px solid var(--brand-muted); border-left-color: var(--brand); }
+    .alert-success { background: rgba(34, 197, 94, 0.12); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.25); }
+    .alert-error { background: rgba(239, 68, 68, 0.12); color: var(--error); border: 1px solid rgba(239, 68, 68, 0.25); }
+    .alert-info { background: var(--brand-muted); color: var(--brand); border: 1px solid var(--brand-muted); }
 
     /* Auth / onboarding */
     .auth-mockup-grid {
@@ -867,9 +1018,8 @@
 
     .auth-shell {
       min-height: 560px;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       border: 1px solid var(--border);
-      border-top: var(--brand-rail) solid var(--brand);
       overflow: hidden;
       position: relative;
       display: flex;
@@ -900,15 +1050,11 @@
 
     .auth-logo {
       font-family: var(--font-display);
-      font-size: 1.625rem;
+      font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       text-align: center;
       margin-bottom: var(--space-2);
-    }
-
-    .auth-logo span {
-      color: var(--brand);
     }
 
     .auth-subtitle {
@@ -1286,7 +1432,7 @@
   <header class="preview-header">
     <div>
       <h1>OWE v2 — Arctic Signal</h1>
-      <p>Sky-blue brand · Bricolage display · ledger layout</p>
+      <p>Arctic Signal — sky-blue accent · Bricolage + Outfit · same layouts as v1</p>
     </div>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
       <span id="theme-icon">☀</span>
@@ -1372,7 +1518,7 @@
 
       <div class="auth-shell" id="onboarding-shell">
         <div class="auth-card">
-          <div class="auth-logo">OW<span>E</span></div>
+          <div class="auth-logo">OWE</div>
           <p class="auth-time-estimate">About 1 minute to complete</p>
 
           <div class="stepper" id="stepper">
@@ -1499,7 +1645,7 @@
 
       <div class="auth-shell login-shell">
         <div class="auth-card">
-          <div class="auth-logo">OW<span>E</span></div>
+          <div class="auth-logo">OWE</div>
           <p class="auth-subtitle">Sign in to your account</p>
           <button class="btn btn-primary btn-passkey" type="button">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -1570,53 +1716,229 @@
       </div>
     </section>
 
+    <!-- Home launch spotlight -->
+    <section>
+      <div class="section-label"><span class="section-index">06</span><span class="section-index-label">Home spotlight</span></div>
+      <h2 class="section-title">Launch spotlight carousel</h2>
+      <p class="section-desc">Home tab — full-screen, one launch at a time. Pending (Registration) and Live auctions only. 1–2 slides with swipe/chevron navigation. Launches tab keeps the §07 explore grid. Trading tokens appear in the catalog, not here.</p>
+
+      <div class="spotlight-compare">
+        <div>
+          <p style="font-size:0.8125rem;color:var(--text-muted);margin-bottom:var(--space-3);text-transform:uppercase;letter-spacing:0.04em;">Registration slide</p>
+          <div class="spotlight-frame">
+            <div class="spotlight-topbar">
+              <div class="mockup-logo">OWE</div>
+              <nav class="mockup-nav" style="display:flex">
+                <span class="active">Home</span>
+                <span>Launches</span>
+                <span>Trade</span>
+                <span>Portfolio</span>
+              </nav>
+              <button class="mockup-account" type="button" aria-label="Account menu">
+            <span class="mockup-account-avatar">GP</span>
+            Account
+          </button>
+            </div>
+            <div class="spotlight-slide">
+              <div class="spotlight-bg" aria-hidden="true"></div>
+              <div class="spotlight-content">
+                <span class="badge badge-upcoming">Registration</span>
+                <h3>Alpha Fund</h3>
+                <p class="spotlight-subtitle">Institutional vault</p>
+                <p class="spotlight-desc">Regulated yield vault for qualified investors. Bonding curve auction opens after interest threshold is met.</p>
+                <div class="spotlight-metrics">
+                  <span><strong class="font-data">847</strong> interested</span>
+                  <span><strong class="font-data">$2.1M</strong> committed</span>
+                  <span>Starts <strong class="font-data">Jun 12</strong></span>
+                </div>
+                <div class="spotlight-cta">
+                  <button class="btn btn-primary" type="button">View details</button>
+                </div>
+              </div>
+              <div class="spotlight-controls">
+                <div class="spotlight-arrows">
+                  <button class="spotlight-arrow" type="button" aria-label="Previous launch">‹</button>
+                  <button class="spotlight-arrow" type="button" aria-label="Next launch">›</button>
+                </div>
+                <div class="spotlight-dots" role="tablist" aria-label="Launch slides">
+                  <span class="spotlight-dot active" role="tab" aria-selected="true"></span>
+                  <span class="spotlight-dot" role="tab" aria-selected="false"></span>
+                </div>
+                <a class="spotlight-link" href="#">All launches →</a>
+              </div>
+            </div>
+            <nav class="bottom-nav spotlight-bottom-nav">
+              <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Home</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Launches</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Trade</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
+            </nav>
+          </div>
+        </div>
+
+        <div>
+          <p style="font-size:0.8125rem;color:var(--text-muted);margin-bottom:var(--space-3);text-transform:uppercase;letter-spacing:0.04em;">Live auction slide</p>
+          <div class="spotlight-frame">
+            <div class="spotlight-topbar">
+              <div class="mockup-logo">OWE</div>
+              <nav class="mockup-nav" style="display:flex">
+                <span class="active">Home</span>
+                <span>Launches</span>
+                <span>Trade</span>
+                <span>Portfolio</span>
+              </nav>
+              <button class="mockup-account" type="button" aria-label="Account menu">
+            <span class="mockup-account-avatar">GP</span>
+            Account
+          </button>
+            </div>
+            <div class="spotlight-slide">
+              <div class="spotlight-bg" aria-hidden="true"></div>
+              <div class="spotlight-content">
+                <span class="badge badge-live"><span class="badge-dot"></span> Live</span>
+                <h3>OWE Protocol</h3>
+                <p class="spotlight-subtitle">Infrastructure token</p>
+                <p class="spotlight-desc">Core protocol token for the OWE launch and trading stack. Bonding curve auction live now.</p>
+                <div class="spotlight-metrics">
+                  <span><strong class="font-data">$4.2M</strong> raised</span>
+                  <span>Curve <strong class="font-data">$0.0847</strong></span>
+                  <span class="countdown"><strong class="font-data">02:14:37</strong> left</span>
+                </div>
+                <div class="spotlight-cta">
+                  <button class="btn btn-primary" type="button">View details</button>
+                </div>
+              </div>
+              <div class="spotlight-controls">
+                <div class="spotlight-arrows">
+                  <button class="spotlight-arrow" type="button" aria-label="Previous launch">‹</button>
+                  <button class="spotlight-arrow" type="button" aria-label="Next launch">›</button>
+                </div>
+                <div class="spotlight-dots" role="tablist" aria-label="Launch slides">
+                  <span class="spotlight-dot" role="tab" aria-selected="false"></span>
+                  <span class="spotlight-dot active" role="tab" aria-selected="true"></span>
+                </div>
+                <a class="spotlight-link" href="#">All launches →</a>
+              </div>
+            </div>
+            <nav class="bottom-nav spotlight-bottom-nav">
+              <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Home</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Launches</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Trade</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:0.8125rem;color:var(--text-muted);margin-top:var(--space-5);margin-bottom:var(--space-3);text-transform:uppercase;letter-spacing:0.04em;">Fallback — no pending/live (ended spotlight)</p>
+      <div class="spotlight-frame wide ended" style="max-width:420px">
+        <div class="spotlight-slide" style="min-height:480px">
+          <div class="spotlight-bg" aria-hidden="true"></div>
+          <div class="spotlight-content">
+            <span class="badge badge-ended">Ended</span>
+            <h3>Stable Yield</h3>
+            <p class="spotlight-subtitle">Yield-bearing stablecoin</p>
+            <p class="spotlight-desc">Auction closed Apr 28. Token now trading on open market.</p>
+            <div class="spotlight-metrics">
+              <span><strong class="font-data">$8.4M</strong> final raised</span>
+              <span>Ended <strong class="font-data">Apr 28</strong></span>
+            </div>
+            <div class="spotlight-cta">
+              <button class="btn btn-secondary" type="button">Trade now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Launch catalog -->
     <section>
       <div class="section-label"><span class="section-index">07</span><span class="section-index-label">Launch catalog</span></div>
-      <h2 class="section-title">Token launches</h2>
-      <p class="section-desc">Ledger list — ruled rows, not a card grid. Brand rail on hover. Monospace metrics and outline status chips.</p>
-      <div class="launch-ledger">
-        <div class="launch-ledger-header">
-          <span>Token</span>
-          <span>Status</span>
-          <span>Metric A</span>
-          <span>Metric B</span>
+      <h2 class="section-title">Token launches (explore grid)</h2>
+      <p class="section-desc">Launches tab — filterable card grid for all phases including Trading. General explore use case. Home tab (§06) handles the 1–2 spotlight launches; this is the full catalog.</p>
+
+      <div class="mockup-frame">
+        <div class="mockup-topbar">
+          <div class="mockup-logo">OWE</div>
+          <nav class="mockup-nav">
+            <span>Home</span>
+            <span class="active">Launches</span>
+            <span>Trade</span>
+            <span>Portfolio</span>
+          </nav>
+          <button class="mockup-account" type="button" aria-label="Account menu">
+            <span class="mockup-account-avatar">GP</span>
+            Account
+          </button>
         </div>
-        <div class="launch-row" tabindex="0">
-          <div class="launch-row-main">
-            <div class="token-icon" style="width:36px;height:36px;font-size:0.75rem">OWE</div>
+        <div class="mockup-body">
+          <div class="catalog-toolbar">
+            <h3>Token launches</h3>
+            <div class="filter-tabs" role="tablist" aria-label="Filter launches">
+              <button class="filter-tab active" type="button">All</button>
+              <button class="filter-tab" type="button">Registration</button>
+              <button class="filter-tab" type="button">Live</button>
+              <button class="filter-tab" type="button">Trading</button>
+            </div>
+          </div>
+          <div class="launch-cards">
+        <div class="launch-card">
+          <div class="launch-card-top">
             <div>
               <h4>OWE Protocol</h4>
-              <p>Infrastructure token</p>
+              <p style="font-size:0.75rem;color:var(--text-muted)">Infrastructure token</p>
             </div>
+            <span class="badge badge-live"><span class="badge-dot"></span> Live</span>
           </div>
-          <span class="badge badge-live"><span class="badge-dot"></span> Live</span>
-          <div class="launch-row-stat"><div class="stat-label">Raised</div><div class="stat-value">$4.2M</div></div>
-          <div class="launch-row-stat"><div class="stat-label">Curve</div><div class="stat-value">$0.0847</div></div>
+          <div class="launch-card-metrics">
+            <div><div class="stat-label">Raised</div><div class="stat-value">$4.2M</div></div>
+            <div><div class="stat-label">Curve price</div><div class="stat-value">$0.0847</div></div>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div>
+          <div class="launch-card-action">
+            <button class="btn btn-primary" type="button">View auction</button>
+          </div>
         </div>
-        <div class="launch-row" tabindex="0">
-          <div class="launch-row-main">
-            <div class="token-icon" style="width:36px;height:36px;font-size:0.75rem">AF</div>
+        <div class="launch-card">
+          <div class="launch-card-top">
             <div>
               <h4>Alpha Fund</h4>
-              <p>Institutional vault</p>
+              <p style="font-size:0.75rem;color:var(--text-muted)">Institutional vault</p>
             </div>
+            <span class="badge badge-upcoming">Registration</span>
           </div>
-          <span class="badge badge-upcoming">Registration</span>
-          <div class="launch-row-stat"><div class="stat-label">Interest</div><div class="stat-value">847</div></div>
-          <div class="launch-row-stat"><div class="stat-label">Starts</div><div class="stat-value">Jun 12</div></div>
+          <div class="launch-card-metrics">
+            <div><div class="stat-label">Interest</div><div class="stat-value">847</div></div>
+            <div><div class="stat-label">Starts</div><div class="stat-value">Jun 12</div></div>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+          <div class="launch-card-action">
+            <button class="btn btn-secondary" type="button">Register interest</button>
+          </div>
         </div>
-        <div class="launch-row" tabindex="0">
-          <div class="launch-row-main">
-            <div class="token-icon" style="width:36px;height:36px;font-size:0.75rem">SY</div>
+        <div class="launch-card">
+          <div class="launch-card-top">
             <div>
               <h4>Stable Yield</h4>
-              <p>Yield-bearing stablecoin</p>
+              <p style="font-size:0.75rem;color:var(--text-muted)">Yield-bearing stablecoin</p>
             </div>
+            <span class="badge badge-trading">Trading</span>
           </div>
-          <span class="badge badge-trading">Trading</span>
-          <div class="launch-row-stat"><div class="stat-label">Price</div><div class="stat-value">$1.0024</div></div>
-          <div class="launch-row-stat"><div class="stat-label">24h vol</div><div class="stat-value">$12.8M</div></div>
+          <div class="launch-card-metrics">
+            <div><div class="stat-label">Price</div><div class="stat-value">$1.0024</div></div>
+            <div><div class="stat-label">24h vol</div><div class="stat-value">$12.8M</div></div>
+          </div>
+          <div class="launch-card-action">
+            <button class="btn btn-secondary" type="button">Trade</button>
+          </div>
+        </div>
+          </div>
+          <nav class="bottom-nav">
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Home</div>
+            <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Launches</div>
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Trade</div>
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
+          </nav>
         </div>
       </div>
     </section>
@@ -1629,14 +1951,17 @@
 
       <div class="mockup-frame">
         <div class="mockup-topbar">
-          <div class="mockup-logo">OW<span style="color:var(--brand)">E</span></div>
-          <nav class="mockup-nav">
+          <div class="mockup-logo">OWE</div>
+          <nav class="mockup-nav" style="display:flex">
+            <span>Home</span>
             <span class="active">Launches</span>
-            <span>Markets</span>
             <span>Trade</span>
             <span>Portfolio</span>
           </nav>
-          <button class="mockup-connect">Connect</button>
+          <button class="mockup-account" type="button" aria-label="Account menu">
+            <span class="mockup-account-avatar">GP</span>
+            Account
+          </button>
         </div>
         <div class="mockup-body">
           <div class="launch-header">
@@ -1694,8 +2019,8 @@
           </div>
 
           <nav class="bottom-nav">
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Home</div>
             <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Launches</div>
-            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Markets</div>
             <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Trade</div>
             <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
           </nav>
@@ -1711,14 +2036,17 @@
 
       <div class="mockup-frame">
         <div class="mockup-topbar">
-          <div class="mockup-logo">OW<span style="color:var(--brand)">E</span></div>
-          <nav class="mockup-nav">
+          <div class="mockup-logo">OWE</div>
+          <nav class="mockup-nav" style="display:flex">
+            <span>Home</span>
             <span>Launches</span>
-            <span>Markets</span>
             <span class="active">Trade</span>
             <span>Portfolio</span>
           </nav>
-          <button class="mockup-connect">Connect</button>
+          <button class="mockup-account" type="button" aria-label="Account menu">
+            <span class="mockup-account-avatar">GP</span>
+            Account
+          </button>
         </div>
         <div class="mockup-body">
           <div class="trade-grid">
@@ -1789,8 +2117,8 @@
           </div>
 
           <nav class="bottom-nav">
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Home</div>
             <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Launches</div>
-            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Markets</div>
             <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Trade</div>
             <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
           </nav>

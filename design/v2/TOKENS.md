@@ -22,4 +22,4 @@ Sky blue — not purple, not teal-green. Green/red reserved for market direction
 
 ## v2 vs v1
 
-Ledger list catalog, brand rails, outline badges, 4px radius, Bricolage display. Brand is deeper sky blue vs v1 steel `#4A7BF7`.
+Same component patterns and layouts as v1 (card grid catalog, spotlight carousel, mockup chrome). v2 differs only in **fonts** (Bricolage Grotesque + Outfit vs General Sans + DM Sans) and **colors** (Arctic Signal sky blue vs v1 steel blue `#4A7BF7`).

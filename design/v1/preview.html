@@ -288,6 +288,80 @@
       min-height: 36px;
     }
 
+    .mockup-account {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 6px 12px 6px 6px;
+      font-size: 0.8125rem;
+      color: var(--text);
+      cursor: pointer;
+      min-height: 36px;
+    }
+
+    .mockup-account-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-sm);
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6875rem;
+      font-weight: 600;
+    }
+
+    .catalog-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .catalog-toolbar h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      min-height: 36px;
+    }
+
+    .filter-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .launch-card-action {
+      margin-top: var(--space-3);
+    }
+
+    .launch-card-action .btn {
+      width: 100%;
+      min-height: 40px;
+    }
+
     .mockup-body { padding: var(--space-4); }
 
     /* Launch auction mockup */
@@ -669,6 +743,191 @@
     @media (min-width: 900px) {
       .launch-cards { grid-template-columns: repeat(3, 1fr); }
     }
+
+    @media (min-width: 768px) {
+      .launch-cards { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* §06 Home launch spotlight */
+    .spotlight-frame {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .spotlight-frame.wide { max-width: 900px; }
+
+    .spotlight-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--border);
+      background: rgba(12, 13, 15, 0.85);
+      position: relative;
+      z-index: 3;
+    }
+
+    .spotlight-topbar .mockup-nav span.active { color: var(--accent); }
+
+    .spotlight-slide {
+      position: relative;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .spotlight-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(12, 13, 15, 0.96) 0%, rgba(12, 13, 15, 0.55) 45%, rgba(12, 13, 15, 0.25) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%23151619"/><stop offset="100%" stop-color="%231C1D21"/></linearGradient></defs><rect fill="url(%23g)" width="400" height="640"/><rect fill="%232A2B30" x="40" y="120" width="320" height="2" opacity="0.4"/><rect fill="%232A2B30" x="80" y="180" width="240" height="2" opacity="0.3"/><rect fill="%232A2B30" x="60" y="240" width="280" height="2" opacity="0.25"/><circle fill="%234A7BF7" cx="200" cy="320" r="80" opacity="0.06"/></svg>') center/cover;
+    }
+
+    .spotlight-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.015) 2px,
+        rgba(255, 255, 255, 0.015) 4px
+      );
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .spotlight-content {
+      position: relative;
+      z-index: 2;
+      padding: var(--space-5) var(--space-4) var(--space-3);
+    }
+
+    .spotlight-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: var(--space-2) 0 var(--space-1);
+    }
+
+    .spotlight-subtitle {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: var(--space-3);
+    }
+
+    .spotlight-desc {
+      font-size: 0.9375rem;
+      color: var(--text);
+      line-height: 1.45;
+      margin-bottom: var(--space-4);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .spotlight-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-4);
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-muted);
+      margin-bottom: var(--space-4);
+    }
+
+    .spotlight-metrics strong { color: var(--text); font-weight: 500; }
+
+    .spotlight-metrics .countdown { color: var(--accent); }
+
+    .spotlight-cta { margin-bottom: var(--space-4); }
+
+    .spotlight-cta .btn { width: 100%; min-height: 48px; font-size: 0.9375rem; }
+
+    .spotlight-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding: 0 var(--space-4) var(--space-4);
+      position: relative;
+      z-index: 2;
+    }
+
+    .spotlight-arrows {
+      display: flex;
+      gap: var(--space-2);
+    }
+
+    .spotlight-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: rgba(21, 22, 25, 0.8);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.125rem;
+    }
+
+    .spotlight-dots {
+      display: flex;
+      gap: var(--space-2);
+      align-items: center;
+    }
+
+    .spotlight-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    .spotlight-dot.active { background: var(--accent); width: 20px; border-radius: 4px; }
+
+    .spotlight-link {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .spotlight-link:hover { color: var(--accent); }
+
+    .spotlight-bottom-nav {
+      border-top: 1px solid var(--border);
+      background: rgba(12, 13, 15, 0.95);
+    }
+
+    .spotlight-compare {
+      display: grid;
+      gap: var(--space-5);
+      margin-top: var(--space-5);
+    }
+
+    @media (min-width: 768px) {
+      .spotlight-compare { grid-template-columns: 1fr 1fr; }
+      .spotlight-frame { max-width: none; }
+    }
+
+    .spotlight-frame.ended .spotlight-bg {
+      filter: saturate(0.45);
+    }
+
+    .badge-ended { background: rgba(139, 141, 151, 0.2); color: var(--text-muted); }
 
     .launch-card {
       background: var(--surface-elevated);
@@ -1441,12 +1700,172 @@
       </div>
     </section>
 
+    </section>
+
+    <!-- Home launch spotlight -->
+    <section>
+      <div class="section-label">06 — Home launch spotlight</div>
+      <h2 class="section-title">Launch spotlight carousel</h2>
+      <p class="section-desc">Home tab — full-screen, one launch at a time. Pending (Registration) and Live auctions only. 1–2 slides with swipe/chevron navigation. Launches tab keeps the §07 explore grid. Trading tokens appear in the grid, not here.</p>
+
+      <div class="spotlight-compare">
+        <div>
+          <p style="font-size:0.8125rem;color:var(--text-muted);margin-bottom:var(--space-3);text-transform:uppercase;letter-spacing:0.04em;">Registration slide</p>
+          <div class="spotlight-frame">
+            <div class="spotlight-topbar">
+              <div class="mockup-logo">OWE</div>
+              <nav class="mockup-nav" style="display:flex">
+                <span class="active">Home</span>
+                <span>Launches</span>
+                <span>Trade</span>
+                <span>Portfolio</span>
+              </nav>
+              <button class="mockup-account" type="button" aria-label="Account menu">
+                <span class="mockup-account-avatar">GP</span>
+              </button>
+            </div>
+            <div class="spotlight-slide">
+              <div class="spotlight-bg" aria-hidden="true"></div>
+              <div class="spotlight-content">
+                <span class="badge badge-upcoming">Registration</span>
+                <h3>Alpha Fund</h3>
+                <p class="spotlight-subtitle">Institutional vault</p>
+                <p class="spotlight-desc">Regulated yield vault for qualified investors. Bonding curve auction opens after interest threshold is met.</p>
+                <div class="spotlight-metrics">
+                  <span><strong class="font-data">847</strong> interested</span>
+                  <span><strong class="font-data">$2.1M</strong> committed</span>
+                  <span>Starts <strong class="font-data">Jun 12</strong></span>
+                </div>
+                <div class="spotlight-cta">
+                  <button class="btn btn-primary" type="button">View details</button>
+                </div>
+              </div>
+              <div class="spotlight-controls">
+                <div class="spotlight-arrows">
+                  <button class="spotlight-arrow" type="button" aria-label="Previous launch">‹</button>
+                  <button class="spotlight-arrow" type="button" aria-label="Next launch">›</button>
+                </div>
+                <div class="spotlight-dots" role="tablist" aria-label="Launch slides">
+                  <span class="spotlight-dot active" role="tab" aria-selected="true"></span>
+                  <span class="spotlight-dot" role="tab" aria-selected="false"></span>
+                </div>
+                <a class="spotlight-link" href="#">All launches →</a>
+              </div>
+            </div>
+            <nav class="bottom-nav spotlight-bottom-nav">
+              <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Home</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Launches</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Trade</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
+            </nav>
+          </div>
+        </div>
+
+        <div>
+          <p style="font-size:0.8125rem;color:var(--text-muted);margin-bottom:var(--space-3);text-transform:uppercase;letter-spacing:0.04em;">Live auction slide</p>
+          <div class="spotlight-frame">
+            <div class="spotlight-topbar">
+              <div class="mockup-logo">OWE</div>
+              <nav class="mockup-nav" style="display:flex">
+                <span class="active">Home</span>
+                <span>Launches</span>
+                <span>Trade</span>
+                <span>Portfolio</span>
+              </nav>
+              <button class="mockup-account" type="button" aria-label="Account menu">
+                <span class="mockup-account-avatar">GP</span>
+              </button>
+            </div>
+            <div class="spotlight-slide">
+              <div class="spotlight-bg" aria-hidden="true"></div>
+              <div class="spotlight-content">
+                <span class="badge badge-live"><span class="badge-dot"></span> Live</span>
+                <h3>OWE Protocol</h3>
+                <p class="spotlight-subtitle">Infrastructure token</p>
+                <p class="spotlight-desc">Core protocol token for the OWE launch and trading stack. Bonding curve auction live now.</p>
+                <div class="spotlight-metrics">
+                  <span><strong class="font-data">$4.2M</strong> raised</span>
+                  <span>Curve <strong class="font-data">$0.0847</strong></span>
+                  <span class="countdown"><strong class="font-data">02:14:37</strong> left</span>
+                </div>
+                <div class="spotlight-cta">
+                  <button class="btn btn-primary" type="button">View details</button>
+                </div>
+              </div>
+              <div class="spotlight-controls">
+                <div class="spotlight-arrows">
+                  <button class="spotlight-arrow" type="button" aria-label="Previous launch">‹</button>
+                  <button class="spotlight-arrow" type="button" aria-label="Next launch">›</button>
+                </div>
+                <div class="spotlight-dots" role="tablist" aria-label="Launch slides">
+                  <span class="spotlight-dot" role="tab" aria-selected="false"></span>
+                  <span class="spotlight-dot active" role="tab" aria-selected="true"></span>
+                </div>
+                <a class="spotlight-link" href="#">All launches →</a>
+              </div>
+            </div>
+            <nav class="bottom-nav spotlight-bottom-nav">
+              <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Home</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Launches</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Trade</div>
+              <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:0.8125rem;color:var(--text-muted);margin-top:var(--space-5);margin-bottom:var(--space-3);text-transform:uppercase;letter-spacing:0.04em;">Fallback — no pending/live (ended spotlight)</p>
+      <div class="spotlight-frame wide ended" style="max-width:420px">
+        <div class="spotlight-slide" style="min-height:480px">
+          <div class="spotlight-bg" aria-hidden="true"></div>
+          <div class="spotlight-content">
+            <span class="badge badge-ended">Ended</span>
+            <h3>Stable Yield</h3>
+            <p class="spotlight-subtitle">Yield-bearing stablecoin</p>
+            <p class="spotlight-desc">Auction closed Apr 28. Token now trading on open market.</p>
+            <div class="spotlight-metrics">
+              <span><strong class="font-data">$8.4M</strong> final raised</span>
+              <span>Ended <strong class="font-data">Apr 28</strong></span>
+            </div>
+            <div class="spotlight-cta">
+              <button class="btn btn-secondary" type="button">Trade now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Launch catalog -->
     <section>
       <div class="section-label">07 — Launch catalog</div>
-      <h2 class="section-title">Token launches</h2>
-      <p class="section-desc">Card grid for discovery. Monospace metrics, status chips, progress toward raise goal. No memecoin aesthetics.</p>
-      <div class="launch-cards">
+      <h2 class="section-title">Token launches (explore grid)</h2>
+      <p class="section-desc">Launches tab — filterable card grid for all phases including Trading. General explore use case. Home tab (§06) handles the 1–2 spotlight launches; this is the full catalog.</p>
+
+      <div class="mockup-frame">
+        <div class="mockup-topbar">
+          <div class="mockup-logo">OWE</div>
+          <nav class="mockup-nav">
+            <span>Home</span>
+            <span class="active">Launches</span>
+            <span>Trade</span>
+            <span>Portfolio</span>
+          </nav>
+          <button class="mockup-account" type="button" aria-label="Account menu">
+            <span class="mockup-account-avatar">GP</span>
+            Account
+          </button>
+        </div>
+        <div class="mockup-body">
+          <div class="catalog-toolbar">
+            <h3>Token launches</h3>
+            <div class="filter-tabs" role="tablist" aria-label="Filter launches">
+              <button class="filter-tab active" type="button">All</button>
+              <button class="filter-tab" type="button">Registration</button>
+              <button class="filter-tab" type="button">Live</button>
+              <button class="filter-tab" type="button">Trading</button>
+            </div>
+          </div>
+          <div class="launch-cards">
         <div class="launch-card">
           <div class="launch-card-top">
             <div>
@@ -1460,6 +1879,9 @@
             <div><div class="stat-label">Curve price</div><div class="stat-value">$0.0847</div></div>
           </div>
           <div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div>
+          <div class="launch-card-action">
+            <button class="btn btn-primary" type="button">View auction</button>
+          </div>
         </div>
         <div class="launch-card">
           <div class="launch-card-top">
@@ -1474,6 +1896,9 @@
             <div><div class="stat-label">Starts</div><div class="stat-value">Jun 12</div></div>
           </div>
           <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+          <div class="launch-card-action">
+            <button class="btn btn-secondary" type="button">Register interest</button>
+          </div>
         </div>
         <div class="launch-card">
           <div class="launch-card-top">
@@ -1487,6 +1912,18 @@
             <div><div class="stat-label">Price</div><div class="stat-value">$1.0024</div></div>
             <div><div class="stat-label">24h vol</div><div class="stat-value">$12.8M</div></div>
           </div>
+          <div class="launch-card-action">
+            <button class="btn btn-secondary" type="button">Trade</button>
+          </div>
+        </div>
+          </div>
+
+          <nav class="bottom-nav">
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Home</div>
+            <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Launches</div>
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Trade</div>
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
+          </nav>
         </div>
       </div>
     </section>
@@ -1501,12 +1938,15 @@
         <div class="mockup-topbar">
           <div class="mockup-logo">OWE</div>
           <nav class="mockup-nav">
+            <span>Home</span>
             <span class="active">Launches</span>
-            <span>Markets</span>
             <span>Trade</span>
             <span>Portfolio</span>
           </nav>
-          <button class="mockup-connect">Connect</button>
+          <button class="mockup-account" type="button" aria-label="Account menu">
+            <span class="mockup-account-avatar">GP</span>
+            Account
+          </button>
         </div>
         <div class="mockup-body">
           <div class="launch-header">
@@ -1564,8 +2004,8 @@
           </div>
 
           <nav class="bottom-nav">
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Home</div>
             <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Launches</div>
-            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Markets</div>
             <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Trade</div>
             <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
           </nav>
@@ -1583,12 +2023,15 @@
         <div class="mockup-topbar">
           <div class="mockup-logo">OWE</div>
           <nav class="mockup-nav">
+            <span>Home</span>
             <span>Launches</span>
-            <span>Markets</span>
             <span class="active">Trade</span>
             <span>Portfolio</span>
           </nav>
-          <button class="mockup-connect">Connect</button>
+          <button class="mockup-account" type="button" aria-label="Account menu">
+            <span class="mockup-account-avatar">GP</span>
+            Account
+          </button>
         </div>
         <div class="mockup-body">
           <div class="trade-grid">
@@ -1659,8 +2102,8 @@
           </div>
 
           <nav class="bottom-nav">
+            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Home</div>
             <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Launches</div>
-            <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Markets</div>
             <div class="bottom-nav-item active"><div class="bottom-nav-icon"></div>Trade</div>
             <div class="bottom-nav-item"><div class="bottom-nav-icon"></div>Portfolio</div>
           </nav>

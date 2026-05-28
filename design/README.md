@@ -5,7 +5,7 @@ Versioned design system explorations for OWE. Each `design/vN/` folder is a **se
 | Version | Name | Status | Preview |
 |---------|------|--------|---------|
 | [v1](./v1/) | Industrial Utilitarian | Active | [preview.html](./v1/preview.html) |
-| [v2](./v2/) | Arctic Signal | **Draft** | [preview.html](./v2/preview.html) |
+| [v2](./v2/) | Arctic Signal | **Draft** | [preview.html](./v2/preview.html) — same layouts as v1, Arctic palette + Bricolage/Outfit |
 
 ## Source of truth hierarchy
 

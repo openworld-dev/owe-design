@@ -19,7 +19,6 @@
   --brand-foreground: #ffffff;
   --brand-muted: rgb(3 105 161 / 0.1);
   --brand-subtle: rgb(3 105 161 / 0.05);
-  --brand-rail: 3px;
 
   /* shadcn base — light mode (cool neutrals) */
   --background: #fafafa;
@@ -50,7 +49,7 @@
   --input: #e4e4e7;
   --ring: var(--brand);
 
-  --radius: 0.25rem;
+  --radius: 0.5rem;
 
   /* Trading / launch semantics — green/red never used as brand */
   --success: #16a34a;
