@@ -1,0 +1,123 @@
+/**
+ * OWE Design System v2 — shadcn/ui compatible tokens
+ * Brand-forward Arctic Signal — pure blue, no purple; clear of market green
+ * Import before @theme in globals.css
+ * Dark mode: .dark class on html (shadcn convention)
+ */
+
+:root {
+  /* Typography roles — sans only */
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-code: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Brand scale — Arctic Signal (sky blue; not purple, not teal-green) */
+  --brand: #0369a1;
+  --brand-light: #0284c7;
+  --brand-dark: #075985;
+  --brand-foreground: #ffffff;
+  --brand-muted: rgb(3 105 161 / 0.1);
+  --brand-subtle: rgb(3 105 161 / 0.05);
+  --brand-rail: 3px;
+
+  /* shadcn base — light mode (cool neutrals) */
+  --background: #fafafa;
+  --foreground: #18181b;
+
+  --card: #ffffff;
+  --card-foreground: #18181b;
+
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
+
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: var(--brand);
+
+  --radius: 0.25rem;
+
+  /* Trading / launch semantics — green/red never used as brand */
+  --success: #16a34a;
+  --success-foreground: #ffffff;
+  --warning: #ca8a04;
+  --warning-foreground: #ffffff;
+  --info: var(--brand);
+
+  --surface-elevated: #ffffff;
+  --curve-fill: var(--brand-subtle);
+
+  --market-up: #16a34a;
+  --market-down: #dc2626;
+
+  --toast-success: var(--success);
+  --toast-error: var(--destructive);
+  --toast-warning: var(--warning);
+  --toast-info: var(--brand);
+}
+
+.dark {
+  --brand: #38bdf8;
+  --brand-light: #7dd3fc;
+  --brand-dark: #0ea5e9;
+  --brand-muted: rgb(56 189 248 / 0.14);
+  --brand-subtle: rgb(56 189 248 / 0.07);
+
+  --background: #0a0b0d;
+  --foreground: #f4f4f5;
+
+  --card: #12141a;
+  --card-foreground: #f4f4f5;
+
+  --popover: #12141a;
+  --popover-foreground: #f4f4f5;
+
+  --primary: var(--brand);
+  --primary-foreground: #0c4a6e;
+
+  --secondary: #1a1c22;
+  --secondary-foreground: #f4f4f5;
+
+  --muted: #1a1c22;
+  --muted-foreground: #8b8d97;
+
+  --accent: #1a1c22;
+  --accent-foreground: #f4f4f5;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #27272a;
+  --input: #27272a;
+  --ring: var(--brand);
+
+  --success: #22c55e;
+  --warning: #eab308;
+  --info: var(--brand);
+
+  --surface-elevated: #1a1c22;
+  --curve-fill: var(--brand-subtle);
+
+  --market-up: #22c55e;
+  --market-down: #ef4444;
+
+  --toast-success: var(--success);
+  --toast-error: var(--destructive);
+  --toast-warning: var(--warning);
+  --toast-info: var(--brand);
+}
